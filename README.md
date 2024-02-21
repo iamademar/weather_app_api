@@ -8,6 +8,7 @@ The Weather Data API provides access to real-time weather information for cities
 
 
 ## Versions
+- [V3](https://github.com/iamademar/weather_app_api/releases/tag/v3.0)
 - [V2](https://github.com/iamademar/weather_app_api/releases/tag/v2.0)
 - [V1](https://github.com/iamademar/weather_app_api/releases/tag/v1.0)
 
