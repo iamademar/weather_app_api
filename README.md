@@ -17,16 +17,63 @@ The base URL for the API is:
 https://localhost:3000/
 
 ### Authentication
-This API does not require authentication for access.
+The API requires you to sign-up to access the Weather Data endpoint.
 
 ### Endpoints
-Get Weather Data for a City
+
+#### User Login
+Authenticates a user and initiates a session.
+- HTTP Method: POST
+- Endpoint: /login
+- No Query Parameters
+- Body Parameters:
+  - email: User's email address (required)
+  - password: User's password (required)
+- Response: JSON object containing user data and session information
+
+Request Example:
+```
+curl -X POST "http://localhost:3000/login" -d "email=user@example.com&password=yourpassword"
+```
+
+***
+
+#### User Logout
+Terminates a user's session.
+- HTTP Method: DELETE
+- Endpoint: /logout
+- No Query Parameters or Body Parameters
+- Response: JSON object containing a message that the user has been logged out
+
+Request Example:
+```
+curl -X DELETE "http://localhost:3000/logout"
+```
+
+#### User Registration
+Registers a new user.
+- HTTP Method: POST
+- Endpoint: /signup
+- No Query Parameters
+- Body Parameters:
+  - email: User's email address (required)
+  - password: User's password (required)
+- Response: JSON object containing the newly created user data
+
+Request Example:
+```
+curl -X POST "http://localhost:3000/signup" -d "email=newuser@example.com&password=newpassword"
+```
+
+***
+
+#### Get Weather Data for a City
 Retrieves the current weather data for a specified city.
 
 - HTTP Method: GET
 - Endpoint: /weather
 - Query Parameters:
-- city: Name of the city (required)
+  - city: Name of the city (required)
 - Response: JSON object containing weather data
 
 Request Example:

@@ -1,4 +1,5 @@
 class WeatherController < ApplicationController
+  before_action :authenticate_user!
   def show
     city = params[:city]
     weather_data = WeatherFetcher.fetch(city: city)
