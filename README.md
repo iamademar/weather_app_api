@@ -140,3 +140,4 @@ This command will start Jaeger and expose its UI on http://localhost:16686. If t
 ## Related Blogs for more info
 - https://blog.ademartutor.com/p/observability-with-opentelemetry
 - https://blog.ademartutor.com/p/instrumentation-on-a-weather-api
+- https://blog.ademartutor.com/p/authentication-with-rails-and-jwt
