@@ -44,3 +44,51 @@ The API uses standard HTTP status codes to indicate the success or failure of re
 
 ### Rate Limiting
 The API does not currently enforce rate limiting. However, excessive use may lead to temporary restrictions. Please use the API responsibly.
+
+***
+
+## Install and setup Rails app locally
+
+### Step 1: Clone the Repository
+First, clone the GitHub repository to your local machine. Open a terminal and run:
+```
+git clone https://github.com/iamademar/weather_app_api.git
+cd weather_app_api
+```
+
+### Step 2: Install Dependencies
+```
+bundle install
+```
+
+### Step 4: Environment Variables
+Creating a .env file in the root of your project and add a OPEN_WEATHER_MAP_API_KEY env variable.
+You can get the OpenWeatherMap API keys [here](https://openweathermap.org/).
+
+
+## Running Jaeger locally
+
+### Step 1: Running Jaeger Locally
+The easiest way to get Jaeger up and running locally is through Docker. If you don't have Docker installed, you'll need to download and install it from the Docker website.
+
+Once Docker is ready, you can start the Jaeger all-in-one Docker container, which includes the Jaeger UI, collector, query, and agent, with a single command:
+```
+docker run -d --name jaeger \
+  -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
+  -p 5775:5775/udp \
+  -p 6831:6831/udp \
+  -p 6832:6832/udp \
+  -p 5778:5778 \
+  -p 16686:16686 \
+  -p 14268:14268 \
+  -p 14250:14250 \
+  -p 9411:9411 \
+  jaegertracing/all-in-one:latest
+```
+
+This command will start Jaeger and expose its UI on http://localhost:16686. If this is setup correctly, you should automatically be able to observe the app's data when Jaeger is running.
+
+
+## Related Blogs for more info
+- https://blog.ademartutor.com/p/observability-with-opentelemetry
+- https://blog.ademartutor.com/p/instrumentation-on-a-weather-api
